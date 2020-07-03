@@ -1,0 +1,34 @@
+<div id="contenedor">
+    <div id="juego" class="container"> 
+        <div class="card-header bg-primary"> Adivina la Palabra, letra a letra! </div>
+            <div class="card-body bg-navy">
+               <button class="btn btn-primary" type="button">Reiniciar</button>
+               <div class="row"><div class="col-6"><label class="text-right">VIDAS: </label></div></div>
+               <div class="row"><div class="col-6"><label class="text-left">PUNTAJE: </label></div></div>
+                <!--<img [src]="urlimg" alt=""> -->
+
+                <div id="image">                    
+                         <!--    este div se usará para mostrar la imagen aleatoria-->
+                         <img src="assets/juego/horse.png" alt="">
+                </div>
+                <br>
+                
+                <div class="texto">
+            
+                <h3 id="pista">_ _ _</h3>
+              
+                <h2 id="pista2"></h2>
+                    Eligir una letra:  
+                <input type="text" id="letra" onfocus="this.value=''" value="por ejemplo 'A' o 'a'" maxlength="1">
+                <input type="button" id="boton" value="Ingresar" class="btn btn-warning"/>
+                 <br>
+                </div>
+            </div>
+        <div class="card-footer" >
+            <input class="col-12" type="text" name="letras">
+            <label class="col-12"></label>
+        </div>
+
+
+    </div>
+</div>

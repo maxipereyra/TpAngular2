@@ -1,0 +1,87 @@
+<div id="contenedor">
+
+    <div id="pasajes" class="container"> 
+        <form class="card" #formVenta="ngForm">
+            <div class="card-header bg-primary"> VENTA DE PASAJES </div>
+              <div class="card-body bg-navy">
+                <div class="row form-group">
+                    <label for="dnipasajero" class="col-sm-12 col-md-4">DNI</label>
+                    <input class="form-control col-sm-12 col-md-8" type="text" required minlength="6"
+                          name="dnipasajero" #dnipasajero="ngModel" [(ngModel)]="venta.dnipasajero" />
+                </div>
+                
+                <!-- VALIDACION DE ESTADOS VAR D TEMPLATES
+                  propiedades de las cajas:
+                dirty _cuando alguien escribio en el elemento
+                tuched _verdad cuando ha sido tocada 
+                -->
+                <div *ngIf="dnipasajero.invalid && (dnipasajero.dirty || dnipasajero.touched)"
+                   class="alert alert-danger">
+                    <div *ngIf="dnipasajero.errors.required">
+                          DNI es requerido.
+                    </div>
+                    <div *ngIf = "dnipasajero.errors.minlength">
+                          DNI debe tener 6 caracteres minimo.
+                    </div>
+                </div>
+                <!-- ----------------------------------->
+
+                <div class="row form-group">
+                    <label class="col-sm-12 col-md-4" >Precio</label>
+                    <input class="form-control col-sm-12 col-md-8" type="text" required
+                          name="precio" #precio="ngModel" [(ngModel)]="venta.precio" />
+                </div>
+                <div class="row form-group">
+                    <label for="categoria" class="col-sm-12 col-md-4">Categor&iacute;a</label>
+                    <select name="categoria" #categoria="ngModel" id="categoria" required
+                          class="form-control col-sm-12 col-md-8" [(ngModel)]="venta.categoriapasajero" (change)="calcularDescuento()">
+                        <option value="m">Menor</option>
+                        <option value="a">Adulto</option>
+                        <option value="j">Jubilado</option>
+                        <option value="s" selected>Seleccione..</option>
+                    </select>
+                </div>
+                <div class="row" *ngIf="visible" >
+                    <div class="col6 alert-success" >Descuento:  {{precio_descuento}} </div>
+                    <div class="col6 alert-success" >Precio Total:  {{precio_actual}} </div>                    
+                </div>
+
+             <!--CONSULTAS AL ESTADO DEL FORM-->
+              <div class="row form-group">
+                <button type="button" class="btn btn-primary" [disabled]="formVenta.invalid"
+                    (click)="grabarVenta()" >Guardar</button>                       
+                <button type="button" class="btn btn-success" 
+                    (click)="limpiarVenta()" >Limpiar</button>                       
+              </div>
+            </div> 
+          </form>
+    
+        <div id="Listado de Pasajeros" class="bg-warning">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">DNI</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let ve of ventas">                
+                <td>{{ve.dnipasajero}}</td>
+                <td>{{ve.precio}}</td>
+                <td>{{ve.categoriapasajero}}</td>
+                <td>{{ve.fechacompra | date:'dd/MM/yyyy'}}</td>
+                <td> 
+                  <button class="btn btn-primary"  >Seleccionar</button>
+                  <button class="btn btn-primary"  >Borrar</button>
+                </td>
+              </tr>         
+            </tbody>
+          </table>
+        </div>
+    
+    
+    </div>
+    </div>

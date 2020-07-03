@@ -1,0 +1,97 @@
+<div id="contenedor">
+
+    <section id="seccdelform">
+
+    <!-- AQUI me quEDE En EL FORMULARIO DE REGISTRO --> 
+
+    <aside id="registro">
+        <h3>Miembro Registro</h3>     
+        <hr/>        
+     <form>
+         <div>
+           <label for ="idnom" class="lab1" >ID de ingreso: </label> 
+           <input type="text" class="t1" id="idnom">
+         </div>
+
+         <br/>
+         <div>
+             <label for ="contraseña" class="lab1" >Contraseña: </label>
+             <input type="password" class="t1" id="contraseña">
+         </div>
+
+         <br/>               
+         <div>
+             <label for ="clonseña" class="lab1" >Repita la Contraseña: </label>
+             <input type="password" class="t1" id="clonseña">
+         </div>
+
+         <br/>
+         <div>
+             <label for ="correo" class="lab1" >E-mail: </label>               
+             <input type="email" class="t1" id ="correo">   
+         </div>
+
+         <br/>
+         <div>
+             <label for ="cloncorreo" class="lab1" >Repita el E-mail: </label>               	
+             <input type="email" class="t1" id ="cloncorreo">
+         </div>
+
+         <br/>
+         <div>
+             <label for ="listacorreo" class="lab1" >Lista de Mail: </label> 
+             <input type="radio" id="ok" name="listacorreo" value="ok" >
+             <label for ="ok">Si</label>
+             <input type="radio" id="nok" name="listacorreo" value="nok" >
+             <label for ="nok">NO</label>
+         </div>
+
+         <br/>
+         <div>
+             <label for ="otronombre" class="lab1" >Nombre: </label> 
+             <input type="text">
+         </div>
+
+         <br/>
+         <div>
+             <label for ="genero" class="lab1" >Género:</label>    
+             <input type="radio" id="mujer" name="genero" value="mujer" >
+             <label for ="mujer">Mujer</label>
+             <input type="radio" id="hombre" name="genero" value="hombre" >
+             <label for ="hombre">Hombre</label>
+             <input type="radio" id="otro" name="genero" value="otro" >
+             <label for ="otro">Otro</label>
+         </div>
+
+         <br/>
+         <div>
+             <label for ="fechaN" class="lab1" >Fecha de nacimiento:</label>
+             <input type="date" id="fechaN">
+         </div>
+
+         <br/>
+         <div>
+         <label for ="paises" class="lab1" >País: </label>
+                                          
+         <!--<input type="text">-->
+         <select id="paises" name="estado">
+         <option value="arg">Argentina</option>
+         <option value="bol">Bolivia</option>
+         <option value="Bra">Brasil</option>
+         <option value="Per">Perú</option>
+         <option value="chi">Chile</option>
+         </select>
+         
+         </div>
+
+         <hr/>
+         <br/>
+         <input class="boton"  type="submit" value="Enviar">
+         <input class="boton" type="button" value="Cancelar">
+
+     </form>
+
+    </aside>
+            
+    </section>
+</div>

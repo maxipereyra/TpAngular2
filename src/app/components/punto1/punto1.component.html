@@ -1,0 +1,51 @@
+<div id="contenedor">
+
+<div id="mensajero" class="container">
+    <form class="card">
+        <div class="card-header bg-primary"> Envio de Mensajes-</div>
+          <div class="card-body bg-navy">
+            <div class="row form-group">
+              <label class="col-sm-12 col-md-4">Para</label>
+              <input class="form-control col-sm-12 col-md-8" type="number" name="txtdesde" [(ngModel)]="mensaje.para" />
+            </div>
+          <div class="row form-group">
+            <label class="col-sm-12 col-md-4" >Desde</label>
+            <input class="form-control col-sm-12 col-md-8" type="number" name="txthasta" [(ngModel)]="mensaje.desde"/>
+          </div>
+
+          <label>Longitud de texto escrito: {{tamTexto}} </label>
+          <div class="row form-group">
+            <textarea class="form-control" [maxlength]="tamMaxTexto" rows="5" name="txtTexto" [(ngModel)]="mensaje.texto" (ngModelChange)="cambiarTamTexto()" >  
+            </textarea>
+          </div>
+          <div class="row form-group">
+            <button type="button" class="btn btn-primary" (click)="enviarMensaje()" >Enviar</button>                       
+            <button type="button" class="btn btn-success" (click)="limpiarMensaje()" >Limpiar</button>                       
+          </div>
+        </div>
+      </form>
+
+    <div id="registros" class="bg-warning">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Para</th>
+            <th scope="col">Desde</th>
+            <th scope="col">Texto</th>
+            <th scope="col">Fecha</th>
+          </tr>
+        </thead>
+        <!--<tbody>
+          <tr *ngFor="let item of mensajes">
+            <th scope="row">{{item.para}}</th>
+            <td>{{item.desde}}</td>
+            <td>{{item.texto}}</td>
+            <td>{{item.fechaEnvio | date:'longDate'}}</td>
+          </tr>         
+        </tbody> -->
+      </table>
+    </div>
+
+
+</div>
+</div>

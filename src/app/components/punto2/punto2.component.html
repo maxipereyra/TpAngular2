@@ -1,0 +1,49 @@
+<div id="contenedor">
+
+    <div id="asistente" class="container">
+        <form class="card">
+            <div class="card-header bg-primary"> Registro de Asistentes-</div>
+              <div class="card-body bg-navy">
+                <div class="row form-group">
+                  <label class="col-sm-12 col-md-4">Usuario</label>
+                  <input class="form-control col-sm-12 col-md-8" type="text" name="txtusuario" [(ngModel)]="asistente.usuario" />
+                </div>
+                <div class="row form-group">
+                <label class="col-sm-12 col-md-4" >Organizacion</label>
+                <input class="form-control col-sm-12 col-md-8" type="text" name="txtorganiz" [(ngModel)]="asistente.nombreOrg"/>
+                </div>
+                <div class="row form-group">
+                  <label class="col-sm-12 col-md-4">Requiere Constancia</label>
+                  <input class="form-control col-sm-4 col-md-2" type="checkbox" name="txtconstancia" [(ngModel)]="asistente.requiereConst" />
+                </div>
+              
+              
+              <div class="row form-group">
+                <button type="button" class="btn btn-primary" (click)="guardarAsistente()" >Guardar</button>                       
+                <button type="button" class="btn btn-success" (click)="limpiarAsistente()" >Limpiar</button>                       
+              </div>
+            </div>
+          </form>
+    
+        <div id="registros" class="bg-warning">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Usuario</th>
+                <th scope="col">Nombre Organizacion</th>
+                <th scope="col">Requiere Constancia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of asistentes">
+                <th scope="row">{{item.usuario}}</th>
+                <td>{{item.nombreOrg | uppercase }}</td>
+                <td>{{item.requiereConst}}</td>
+              </tr>         
+            </tbody>
+          </table>
+        </div>
+    
+    
+    </div>
+    </div>
